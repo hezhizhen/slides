@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>reveal-md</title>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./dist/reset.css" />
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/simple.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/monokai-sublime.css" />
+
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template"># 我喜爱的歌
+
+今天（2022-01-18）听了[不可理论](https://bukelilun.com)的第 40 期[港乐谈情](https://bukelilun.com/episodes/40)，忽然也很想整理一下自己喜欢的歌和其中中意的字句。无他，唯自娱耳。
+</script></section><section ><section data-markdown><script type="text/template">
+## The Line-Up
+
+![cover](attachments/2002EasonTheLineup.jpeg)
+
+* 陈奕迅
+* [Spotify](https://open.spotify.com/album/1YhlJrqnaO8Ks2AwvOuVgE)
+</script></section><section data-markdown><script type="text/template">
+### 心里有鬼
+</script></section><section data-markdown><script type="text/template">
+### 我有我爱你
+</script></section><section data-markdown><script type="text/template">
+### 明年今日
+</script></section><section data-markdown><script type="text/template">
+### 人来人往
+
+> 爱若能够永不失去
+> 何以你今天竟想找寻伴侣
+
+> 闭起双眼我最挂念谁
+> 眼睛张开身边竟是谁
+
+> 感激车站里
+> 尚有月台曾让我们满足到落泪
+
+> 拥不拥有也会记住谁
+> 快不快乐有天总过去
+
+> 爱若难以放进手里
+> 何不将这双手放进心里
+
+> 我也开心饮过酒
+</script></section><section data-markdown><script type="text/template">
+### 季军
+</script></section><section data-markdown><script type="text/template">
+### 随意门
+</script></section><section data-markdown><script type="text/template">
+### 1874
+</script></section><section data-markdown><script type="text/template">
+### 防不胜防
+</script></section><section data-markdown><script type="text/template">
+### 两名男子街头相遇
+</script></section><section data-markdown><script type="text/template">
+### 黑面
+</script></section></section><section ><section data-markdown><script type="text/template">
+## 神的游戏
+
+![cover](attachments/games-we-play.jpeg)
+
+* 张悬
+* [Spotify](https://open.spotify.com/album/6ZOZeusLIlHMy52JxwsWhY)
+</script></section><section data-markdown><script type="text/template">
+### 玫瑰色的你
+</script></section><section data-markdown><script type="text/template">
+### 疯狂的阳光
+</script></section><section data-markdown><script type="text/template">
+### 蓝天白云
+</script></section><section data-markdown><script type="text/template">
+### 两者
+</script></section><section data-markdown><script type="text/template">
+### 如何
+</script></section><section data-markdown><script type="text/template">
+### 危险的，是
+</script></section><section data-markdown><script type="text/template">
+### triste
+</script></section><section data-markdown><script type="text/template">
+### 我想你要走了
+</script></section><section data-markdown><script type="text/template">
+### 艳火
+</script></section><section data-markdown><script type="text/template">
+### 日子
+</script></section></section><section  data-markdown><script type="text/template">
+## EP（单曲）
+</script></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"controls":true,"progress":true,"history":true,"center":true,"slideNumber":true}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>
