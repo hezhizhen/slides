@@ -79,6 +79,60 @@
 
 ---
 
+## Time Flies
+
+![cover](attachments/time-flies.jpeg)
+
+* 陈奕迅
+* [Spotify](https://open.spotify.com/album/26a4TfjN04hLg881uIeutW)
+
+----
+
+### [无人之境](https://www.bilibili.com/video/BV1x54y1G7Z6)
+
+----
+
+### 大人
+
+----
+
+### 一丝不挂
+
+----
+
+### [陀飞轮](https://www.bilibili.com/video/BV1Gy4y1q7ZS)
+
+> 过去十八岁没戴表不过有时间
+> 
+
+> 宏愿纵未了
+> 奋斗总不太晚
+
+> 用我尚有
+> 换我没有
+> 其实已用尽所拥有
+
+> 人值得
+> 命中减少几秒
+> 多买一只表
+
+> 为何用到尽了
+> 至知哪样紧要
+
+> 劳力是无止境
+
+
+
+----
+
+### 心腹
+
+----
+
+### 味之素
+
+---
+
 ## 神的游戏
 
 ![cover](attachments/games-we-play.jpeg)
@@ -128,4 +182,4 @@
 
 ---
 
-## EP（单曲）
+## 单曲
