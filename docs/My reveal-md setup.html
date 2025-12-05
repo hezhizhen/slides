@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -11,35 +11,45 @@
     <link rel="stylesheet" href="./dist/theme/simple.css" id="theme" />
     <link rel="stylesheet" href="./css/highlight/monokai-sublime.css" />
 
-
   </head>
   <body>
     <div class="reveal">
-      <div class="slides"><section  data-markdown><script type="text/template"># My reveal-md setup
+      <div class="slides">
+        <section data-markdown data-separator="\n---\n" data-separator-vertical="\n----\n">
+          <textarea data-template>
+            # My reveal-md setup
 
 How to use [reveal-md](https://github.com/webpro/reveal-md) to write presentations in Markdown and host them all on GitHub?
 
 2022-01-14
-</script></section><section  data-markdown><script type="text/template">
+
+---
+
 ## Prerequisites
 
 * [Markdown](https://www.markdownguide.org)
 * [GitHub](https://github.com)
 * [reveal.js](https://revealjs.com) (optional)
-</script></section><section  data-markdown><script type="text/template">
+
+---
+
 ## GitHub
 
 Create a new repository named `slides` with GitHub Pages enabled.
 
 ![](./attachments/gh-settings.png)
-</script></section><section ><section data-markdown><script type="text/template">
+
+---
+
 ## Local
 
 Clone the repository created above and add files and directories to it.
 
 ![](./attachments/slides-dir.png)
 
-👇</script></section><section data-markdown><script type="text/template">
+👇
+----
+
 ### content
 
 This directory is used to store Markdown files.
@@ -47,19 +57,25 @@ This directory is used to store Markdown files.
 ![](./attachments/content-dir.png)
 
 The `attachments` subdirectory is used to store images, videos, etc.
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ### docs
 
 This directory is used to store generated HTML files, and GitHub will use them to build the site.
 
 ![](./attachments/docs-dir.png)
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ### gitignore
 
 Nothing special.
 
 ![](./attachments/gitignore.png)
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ### Makefile
 
 Just for convenience.
@@ -67,17 +83,23 @@ Just for convenience.
 Btw, I prefer `white` theme and `monokai-sublime` highlight theme.
 
 ![](./attachments/makefile.png)
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ### reveal-md.json
 
 Default configurations for reveal-md.
 
 ![](./attachments/reveal-md.png)
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ### reveal.json
 
 ![](./attachments/reveal.png)
-</script></section></section><section  data-markdown><script type="text/template">
+
+---
+
 ## Workflow
 
 1. Create a new Markdown file in `content` and write something (attachments should be added to `attachments`).
@@ -85,16 +107,23 @@ Default configurations for reveal-md.
 3. Execute `make generate` and open `docs/index.html` to see the generated HTML.
 4. Use `git` commands to push all the changes to GitHub.
 5. Wait for a few seconds and then open the [GitHub Page site](https://hezhizhen.github.io/slides) to view the presentation online.
-</script></section><section  data-markdown><script type="text/template">
+
+---
+
 ## Credits
 
 * KeHan Lu's [Use reveal-md to generate multiple slides and host them on GitHub Page](https://blog.hanklu.tw/post/2021/use-reveal-md-to-generate-multiple-slides-and-host-them-on-github-page/)
 * [Themes](https://github.com/hakimel/reveal.js/tree/master/css/theme/source) provided by [reveal.js](https://github.com/hakimel/reveal.js)
 * [Highlight styles](https://github.com/highlightjs/highlight.js/tree/main/src/styles) provided by [highlight.js](https://github.com/highlightjs/highlight.js)
-</script></section></div>
+
+          </textarea>
+        </section>
+      </div>
     </div>
 
     <script src="./dist/reveal.js"></script>
+
+    <script src="./mermaid/dist/mermaid.min.js"></script>
 
     <script src="./plugin/markdown/markdown.js"></script>
     <script src="./plugin/highlight/highlight.js"></script>
@@ -123,6 +152,9 @@ Default configurations for reveal-md.
         center: true,
         transition: 'default', // none/fade/slide/convex/concave/zoom
         slideNumber: true,
+        highlight: {
+          highlightOnLoad: false
+        },
         plugins: [
           RevealMarkdown,
           RevealHighlight,
@@ -135,12 +167,29 @@ Default configurations for reveal-md.
       // options from URL query string
       var queryOptions = Reveal().getQueryHash() || {};
 
-      var options = extend(defaultOptions, {"controls":true,"progress":true,"history":true,"center":true,"slideNumber":true}, queryOptions);
+      var options = extend(defaultOptions, {"controls":true,"progress":true,"history":true,"center":true,"slideNumber":true,"_":["content/"],"static":"docs","static-dirs":"content/attachments","staticDirs":"content/attachments","theme":"simple","highlight-theme":"monokai-sublime","highlightTheme":"monokai-sublime"}, queryOptions);
     </script>
 
 
     <script>
       Reveal.initialize(options);
+      Reveal.addEventListener('ready', function (event) {
+        const blocks = Reveal.getRevealElement().querySelectorAll('pre code:not(.mermaid)');
+        const hlp = Reveal.getPlugin('highlight');
+        blocks.forEach(hlp.highlightBlock);
+      });
+    </script>
+
+    <script>
+      const mermaidOptions = extend({ startOnLoad: false }, {});
+      mermaid.startOnLoad = false;
+      mermaid.initialize(mermaidOptions);
+      const cb = function (event) {
+        mermaid.init(mermaidOptions, '.stack.present > .present pre code.mermaid');
+        mermaid.init(mermaidOptions, '.slides > .present:not(.stack) pre code.mermaid');
+      }
+      Reveal.addEventListener('ready', cb);
+      Reveal.addEventListener('slidetransitionend', cb);
     </script>
   </body>
 </html>

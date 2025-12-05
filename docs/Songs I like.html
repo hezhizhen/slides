@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -11,27 +11,39 @@
     <link rel="stylesheet" href="./dist/theme/simple.css" id="theme" />
     <link rel="stylesheet" href="./css/highlight/monokai-sublime.css" />
 
-
   </head>
   <body>
     <div class="reveal">
-      <div class="slides"><section  data-markdown><script type="text/template"># 我喜爱的歌
+      <div class="slides">
+        <section data-markdown data-separator="\n---\n" data-separator-vertical="\n----\n">
+          <textarea data-template>
+            # 我喜爱的歌
 
 今天（2022-01-18）听了[不可理论](https://bukelilun.com)的第 40 期[港乐谈情](https://bukelilun.com/episodes/40)，忽然也很想整理一下自己喜欢的歌和其中中意的字句。无他，唯自娱耳。
-</script></section><section ><section data-markdown><script type="text/template">
+
+---
+
 ## The Line-Up
 
 ![cover](attachments/2002EasonTheLineup.jpeg)
 
 * 陈奕迅
 * [Spotify](https://open.spotify.com/album/1YhlJrqnaO8Ks2AwvOuVgE)
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ### 心里有鬼
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ### 我有我爱你
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ### 明年今日
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ### 人来人往
 
 > 爱若能够永不失去
@@ -50,13 +62,21 @@
 > 何不将这双手放进心里
 
 > 我也开心饮过酒
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ### 季军
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ### 随意门
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ### 1874
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ### 防不胜防
 
 > 在你的唱机放低唱片是我
@@ -67,24 +87,38 @@
 
 > 你就算知
 > 也不会想是我
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ### 两名男子街头相遇
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ### 黑面
-</script></section></section><section ><section data-markdown><script type="text/template">
+
+---
+
 ## Time Flies
 
 ![cover](attachments/time-flies.jpeg)
 
 * 陈奕迅
 * [Spotify](https://open.spotify.com/album/26a4TfjN04hLg881uIeutW)
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ### [无人之境](https://www.bilibili.com/video/BV1x54y1G7Z6)
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ### 大人
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ### 一丝不挂
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ### [陀飞轮](https://www.bilibili.com/video/BV1Gy4y1q7ZS)
 
 > 过去十八岁没戴表不过有时间
@@ -107,43 +141,76 @@
 > 劳力是无止境
 
 
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ### 心腹
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ### 味之素
-</script></section></section><section ><section data-markdown><script type="text/template">
+
+---
+
 ## 神的游戏
 
 ![cover](attachments/games-we-play.jpeg)
 
 * 张悬
 * [Spotify](https://open.spotify.com/album/6ZOZeusLIlHMy52JxwsWhY)
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ### 玫瑰色的你
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ### 疯狂的阳光
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ### 蓝天白云
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ### 两者
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ### 如何
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ### 危险的，是
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ### triste
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ### 我想你要走了
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ### 艳火
-</script></section><section data-markdown><script type="text/template">
+
+----
+
 ### 日子
-</script></section></section><section  data-markdown><script type="text/template">
+
+---
+
 ## 单曲
-</script></section></div>
+
+          </textarea>
+        </section>
+      </div>
     </div>
 
     <script src="./dist/reveal.js"></script>
+
+    <script src="./mermaid/dist/mermaid.min.js"></script>
 
     <script src="./plugin/markdown/markdown.js"></script>
     <script src="./plugin/highlight/highlight.js"></script>
@@ -172,6 +239,9 @@
         center: true,
         transition: 'default', // none/fade/slide/convex/concave/zoom
         slideNumber: true,
+        highlight: {
+          highlightOnLoad: false
+        },
         plugins: [
           RevealMarkdown,
           RevealHighlight,
@@ -184,12 +254,29 @@
       // options from URL query string
       var queryOptions = Reveal().getQueryHash() || {};
 
-      var options = extend(defaultOptions, {"controls":true,"progress":true,"history":true,"center":true,"slideNumber":true}, queryOptions);
+      var options = extend(defaultOptions, {"controls":true,"progress":true,"history":true,"center":true,"slideNumber":true,"_":["content/"],"static":"docs","static-dirs":"content/attachments","staticDirs":"content/attachments","theme":"simple","highlight-theme":"monokai-sublime","highlightTheme":"monokai-sublime"}, queryOptions);
     </script>
 
 
     <script>
       Reveal.initialize(options);
+      Reveal.addEventListener('ready', function (event) {
+        const blocks = Reveal.getRevealElement().querySelectorAll('pre code:not(.mermaid)');
+        const hlp = Reveal.getPlugin('highlight');
+        blocks.forEach(hlp.highlightBlock);
+      });
+    </script>
+
+    <script>
+      const mermaidOptions = extend({ startOnLoad: false }, {});
+      mermaid.startOnLoad = false;
+      mermaid.initialize(mermaidOptions);
+      const cb = function (event) {
+        mermaid.init(mermaidOptions, '.stack.present > .present pre code.mermaid');
+        mermaid.init(mermaidOptions, '.slides > .present:not(.stack) pre code.mermaid');
+      }
+      Reveal.addEventListener('ready', cb);
+      Reveal.addEventListener('slidetransitionend', cb);
     </script>
   </body>
 </html>
